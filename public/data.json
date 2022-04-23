@@ -1,3 +1,23 @@
 [
-    {"name" : ""}
+    {
+        "name": "firece Animal",
+        "id": 1,
+        "img": "https://i.ibb.co/h7zwg1G/linnea-sandbakk-HQq-IOc8o-Yro-unsplash.jpg",
+        "price": 145,
+        "discription": "6 Hours from morning to noon, and it should be in zoo. Animal like- Tiger, Leapard, lion etc."
+    },
+    {
+        "name": "Pritty Animal",
+        "id": 2,
+        "img": "https://i.ibb.co/cYkTV8J/mehdi-el-marouazi-mf1z-xp-OUV4-unsplash.jpg",
+        "price": 105,
+        "discription": "6 Hours from morning to noon, and it should be in zoo"
+    },
+    {
+        "name": "Reptile Animal",
+        "id": 3,
+        "img": "https://i.ibb.co/x3LsK34/tirza-van-dijk-xfp-Gpk4u8f-U-unsplash.jpg",
+        "price": 185,
+        "discription": "6 Hours from morning to noon, and it should be in zoo"
+    }
 ]
