@@ -53,7 +53,7 @@ const Register = () => {
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     <p className='text-danger'> </p>
                 </Form.Group>
-             
+
                 <h3 className='text-danger'>{errorValue}</h3>
                 <p>Have an account or not? <span onClick={turnToLogin} className='text-primary'>Log in </span></p>
                 <Button className='mx-auto d-block w-50' variant="primary" type="submit">

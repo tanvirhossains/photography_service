@@ -18,7 +18,7 @@ const Login = () => {
     );
 
 
-
+    let errorValue;
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const navigate = useNavigate()
@@ -29,9 +29,12 @@ const Login = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
+        navigate('/home')
 
     }
-
+    if (error || resetError) {
+        errorValue = <p>Error:  {error.message}</p>
+    }
 
     const goToRegister = () => {
         navigate('/register')
@@ -61,6 +64,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     <p className='text-danger'> </p>
+                    <h4 className='text-danger'> {errorValue} </h4>
                 </Form.Group>
                 <p>If you are new? <span onClick={goToRegister} className='text-primary'>Sign up </span></p>
                 <p>Forget password? <span onClick={handleResetPassword} className='text-primary'>Reset password </span></p>

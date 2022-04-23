@@ -1,0 +1,28 @@
+.photographer-info{
+display: flex;
+justify-content: center;
+padding: 20px 100px;
+}
+
+.photographer-info img{
+    width: 400px;
+    height: 500px;
+    /* padding: 0 20px; */
+    border-radius: 50px;
+
+}
+.photographer-info h1{
+    font-size: 1.5em;
+}
+.photographer-info div{
+    padding: 30px;
+    font-size: 2em;
+}
+.photographer-info button{
+    padding: 5px 17px;
+    border-radius: 10px;
+}
+
+.name{
+    color: brown;
+}
