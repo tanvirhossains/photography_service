@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <h1 className='text-center text-primary'>Wild Photography service!!!</h1>
+     
 
 
       <Routes>

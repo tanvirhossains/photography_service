@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [
@@ -78,6 +79,8 @@ const Login = () => {
                     Log in
                 </Button>
             </Form>
+
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

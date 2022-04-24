@@ -1,8 +1,19 @@
-.header {
+.header-container {
+    display: flex;
+    justify-content: space-around;
     background-color: navajowhite;
     padding: 10px;
+    align-items: center;
 }
-.header a{
+
+.header-container img {
+    height: 40px;
+    width: 50px;
+}
+
+
+
+.header-container a {
 
     margin-left: 10px;
 }

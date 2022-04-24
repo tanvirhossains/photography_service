@@ -5,8 +5,9 @@ import './Home.css';
 const Home = () => {
     return (
         <div>
-            {/* <h1 className='home-container'> Hello I am a wild photogrepher </h1> */}
+            <h1 className='text-center text-primary'>Wild Photography service!!!</h1>
             <div className=' photographer-info'>
+
                 <div> <img src={wildMan} alt="" /> </div>
                 <div className='container'>
                     <h1>This is <span className='name'>  Tanvir Hossain Mozumder</span> </h1>
