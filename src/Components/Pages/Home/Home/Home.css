@@ -26,3 +26,14 @@ padding: 20px 100px;
 .name{
     color: brown;
 }
+
+@media screen and (max-width: 600px) {
+    .photographer-info {
+        display: block;
+        padding: 0px;
+    }
+
+    .photographer-info img{
+        width: 100%;
+    }
+}

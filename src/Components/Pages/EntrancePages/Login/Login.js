@@ -3,8 +3,12 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import auth from '../../../../Firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     const [
@@ -25,7 +29,6 @@ const Login = () => {
     const navigate = useNavigate()
 
 
-
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
@@ -34,9 +37,9 @@ const Login = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
-        navigate('/home')
+      
     }
-    if (error || resetError) {
+    if (error ) {
         errorValue = <p>Error:  {error.message}</p>
     }
 
@@ -48,13 +51,11 @@ const Login = () => {
 
         if (email) {
             await sendPasswordResetEmail(email)
-            alert('password reset, check your email please')
+            toast('password reset, check your email please')
         }
-        if (user) {
-            navigate(from, { replace: true })
-        }
+        
         else {
-            alert('enter your email')
+            toast('enter your email')
         }
     }
     return (
@@ -69,12 +70,12 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                    <p className='text-danger'> </p>
+                    
                     <h4 className='text-danger'> {errorValue} </h4>
                 </Form.Group>
                 <p>If you are new? <span onClick={goToRegister} className='text-primary'>Sign up </span></p>
                 <p>Forget password? <span onClick={handleResetPassword} className='text-primary'>Reset password </span></p>
-
+                <ToastContainer />
                 <Button variant="primary" type="submit">
                     Log in
                 </Button>

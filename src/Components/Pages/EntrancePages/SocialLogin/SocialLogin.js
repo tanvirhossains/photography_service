@@ -28,7 +28,7 @@ const SocialLogin = () => {
         <div>
             <div className='d-flex align-items-center'>
                 <div style={{ height: '1px' }} className='bg-primary w-50 '></div>
-                <p className='m-2 text-light'>or</p>
+                <p className='m-2 text-black'>or</p>
                 <div style={{ height: '1px' }} className='bg-primary w-50'></div>
             </div>
             <p>{errorValue}</p>
