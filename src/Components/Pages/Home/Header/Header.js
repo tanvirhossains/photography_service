@@ -15,7 +15,7 @@ const Header = () => {
         <div className='d-flex header'>
             <CustomLink to='/'>Home</CustomLink>
             <CustomLink to='/services'>Services</CustomLink>
-            <CustomLink to='/aboutme'>About Me</CustomLink>
+            <CustomLink to='/about'>About</CustomLink>
             <CustomLink to='/blogs'>Blogs</CustomLink>
             {user ? <a href='' onClick={handleSignOut}>SignOut</a>
                 :

@@ -2,7 +2,7 @@ import { async } from '@firebase/util';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase.init';
 
 const Login = () => {
@@ -24,13 +24,16 @@ const Login = () => {
     const navigate = useNavigate()
 
 
+
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+
     const handleLogin = (event) => {
         event.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
         navigate('/home')
-
     }
     if (error || resetError) {
         errorValue = <p>Error:  {error.message}</p>
@@ -46,7 +49,9 @@ const Login = () => {
             await sendPasswordResetEmail(email)
             alert('password reset, check your email please')
         }
-
+        if (user) {
+            navigate(from, { replace: true })
+        }
         else {
             alert('enter your email')
         }
